@@ -25,6 +25,12 @@
   overflow: hidden;
 }
 
+.social-list-link, .text-content-icon, .client-list-item, .client-list-link, .subscribe-form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   font-family: var(--primary-font-family);
   color: var(--primary-text-color);
@@ -87,29 +93,8 @@ address {
   transition: background-color 250ms var(--time-distribution), color 250ms var(--time-distribution);
 }
 
-.modal-btn:hover,
-.modal-btn:focus {
+.modal-btn:hover, .modal-btn:focus {
   background-color: var(--focus-color);
-}
-
-.social-list-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  transition: background-color 250ms var(--time-distribution);
-}
-
-.social-list-link:hover,
-.social-list-link:focus {
-  background-color: var(--accent-color);
-}
-
-.social-list-link:hover .social-list-icon,
-.social-list-link:focus .social-list-icon {
-  fill: white;
 }
 
 .main-title {
@@ -131,9 +116,25 @@ address {
   justify-content: space-between;
 }
 
+.social-list-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color 250ms var(--time-distribution);
+}
+
+.social-list-link:hover, .social-list-link:focus {
+  background-color: var(--accent-color);
+}
+
 .social-list-icon {
   fill: #AFB1B8;
   transition: fill 250ms var(--time-distribution);
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: white;
 }
 
 .logo {
@@ -212,17 +213,6 @@ address {
   margin-bottom: 10px;
 }
 
-.contact-form-input {
-  width: 100%;
-  height: 40px;
-  padding-left: 42px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: border-color 250ms var(--time-distribution);
-}
-
 .contact-form-input-wrapper {
   position: relative;
   display: block;
@@ -230,14 +220,17 @@ address {
 }
 
 .contact-form-field-name {
-  font-weight: 400;
   font-size: 12px;
+  font-weight: 400;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--secondary-text-color);
 }
 
 .contact-form-message {
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 20px;
   width: 100%;
   height: 120px;
   margin-bottom: 20px;
@@ -258,6 +251,22 @@ address {
   color: rgba(117, 117, 117, 0.5);
 }
 
+.contact-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 250ms var(--time-distribution);
+}
+
+.contact-form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
 .contact-form-input-icon {
   position: absolute;
   color: #212121;
@@ -267,29 +276,8 @@ address {
   transition: fill 250ms var(--time-distribution);
 }
 
-.contact-form-input:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
 .contact-form-input:focus + .contact-form-input-icon {
   fill: var(--accent-color);
-}
-
-.contact-form-message {
-  display: block;
-  margin-top: 4px;
-  margin-bottom: 20px;
-}
-
-.contact-form-checkbox-label {
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  color: var(--secondary-text-color);
 }
 
 .contact-form-checkbox-wrapper {
@@ -304,16 +292,14 @@ address {
   left: 0;
 }
 
-.contact-form-checkbox:focus + .contact-form-checkbox-label::before {
-  outline: 1px solid rgba(0, 0, 255, 0.5);
-}
-
-.contact-form-checkbox:checked + .contact-form-checkbox-label::before {
-  border-color: transparent;
-  border-radius: 3px;
-  background-size: cover;
-  background-image: url(../img/icon-check.svg);
-  background-color: var(--accent-color);
+.contact-form-checkbox-label {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
 }
 
 .contact-form-checkbox-label::before {
@@ -324,6 +310,18 @@ address {
   border: 1px solid var(--secondary-text-color);
   margin-right: 8px;
   cursor: pointer;
+}
+
+.contact-form-checkbox:focus + .contact-form-checkbox-label::before {
+  outline: 1px solid rgba(0, 0, 255, 0.5);
+}
+
+.contact-form-checkbox:checked + .contact-form-checkbox-label::before {
+  border-color: transparent;
+  border-radius: 3px;
+  background-size: cover;
+  background-image: url(../img/icon-check.svg);
+  background-color: var(--accent-color);
 }
 
 .agreement {
@@ -341,8 +339,8 @@ address {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   font-family: inherit;
-  font-weight: 700;
   font-size: 16px;
+  font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
   cursor: pointer;
@@ -351,8 +349,7 @@ address {
   transition: background-color 250ms var(--time-distribution), color 250ms var(--time-distribution);
 }
 
-.contact-form-submit-btn:hover,
-.contact-form-submit-btn:focus {
+.contact-form-submit-btn:hover, .contact-form-submit-btn:focus {
   background-color: var(--focus-color);
 }
 
@@ -374,6 +371,10 @@ address {
 
 .nav-list {
   display: flex;
+}
+
+.nav-list .link.current {
+  color: var(--accent-color);
 }
 
 .contact-list {
@@ -405,6 +406,10 @@ address {
   transition: color 250ms var(--time-distribution);
 }
 
+.nav-list-link:hover, .nav-list-link:focus {
+  color: var(--accent-color);
+}
+
 .current {
   position: relative;
 }
@@ -419,11 +424,6 @@ address {
   background-color: var(--accent-color);
 }
 
-.nav-list-link:hover,
-.nav-list-link:focus {
-  color: var(--accent-color);
-}
-
 .head-contact {
   display: inline-flex;
   align-items: center;
@@ -435,15 +435,14 @@ address {
   transition: color 250ms var(--time-distribution);
 }
 
+.head-contact:hover, .head-contact:focus {
+  color: var(--accent-color);
+}
+
 .contact-icon {
   margin-right: 10px;
   fill: currentColor;
   transition: fill 250ms var(--time-distribution);
-}
-
-.head-contact:hover,
-.head-contact:focus {
-  color: var(--accent-color);
 }
 
 .head-contact:hover .contact-icon,
@@ -460,10 +459,6 @@ address {
   color: var(--primary-section-color);
 }
 
-.nav-list .link.current {
-  color: var(--accent-color);
-}
-
 .hero {
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/hero/bg-img.jpg");
   background-size: cover;
@@ -474,9 +469,6 @@ address {
 }
 
 .text-content-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 270px;
   height: 120px;
   background-color: var(--team-background-color);
@@ -582,6 +574,7 @@ address {
   margin-top: 30px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  background-color: var(--primary-section-color);
 }
 
 .section-team {
@@ -619,10 +612,6 @@ address {
   padding: 30px 32px;
 }
 
-.section-team-list {
-  background-color: var(--primary-section-color);
-}
-
 .section-client-title {
   font-weight: 700;
   font-size: 36px;
@@ -638,16 +627,14 @@ address {
 }
 
 .client-list-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-right: 30px;
 }
 
+.client-list-item:last-child {
+  margin-right: 0px;
+}
+
 .client-list-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 170px;
   height: 92px;
   border: 1px solid #AFB1B8;
@@ -656,12 +643,7 @@ address {
   transition: border-color 250ms var(--time-distribution);
 }
 
-.client-list-item:last-child {
-  margin-right: 0px;
-}
-
-.client-list-link:hover,
-.client-list-link:focus {
+.client-list-link:hover, .client-list-link:focus {
   border-color: var(--accent-color);
   color: var(--accent-color);
   cursor: pointer;
@@ -675,10 +657,6 @@ address {
 .client-list-link:hover .client-list-icon,
 .client-list-link:focus .client-list-icon {
   fill: var(--accent-color);
-}
-
-.portfolio-gallery-btn {
-  display: flex;
 }
 
 .portfolio-gallery {
@@ -696,15 +674,12 @@ address {
   transition: box-shadow 250ms var(--time-distribution);
 }
 
-.section-portfolio {
-  background-color: var(--primary-section-color);
+.portfolio-list:hover, .portfolio-list:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.portfolio-btn:hover,
-.portfolio-btn:focus {
-  color: var(--primary-section-color);
-  background-color: var(--focus-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+.section-portfolio {
+  background-color: var(--primary-section-color);
 }
 
 .portfolio-btn {
@@ -721,15 +696,16 @@ address {
   transition: color 250ms var(--time-distribution), background-color 250ms var(--time-distribution), box-shadow 250ms var(--time-distribution);
 }
 
+.portfolio-btn:hover, .portfolio-btn:focus {
+  color: var(--primary-section-color);
+  background-color: var(--focus-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
 .portfolio-gallery-btn {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
-}
-
-.portfolio-list:hover,
-.portfolio-list:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-btn-list:not(:last-child) {
@@ -830,8 +806,7 @@ address {
   color: var(--footer-main-color);
 }
 
-.footer-contact-mail:hover,
-.footer-contact-mail:focus {
+.footer-contact-mail:hover, .footer-contact-mail:focus {
   color: var(--accent-color);
 }
 
@@ -842,8 +817,7 @@ address {
   color: var(--footer-main-color);
 }
 
-.footer-contact-phone:hover,
-.footer-contact-mail:focus {
+.footer-contact-phone:hover, .footer-contact-phone:focus {
   color: var(--accent-color);
 }
 
@@ -891,9 +865,6 @@ address {
 }
 
 .subscribe-form-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 200px;
   height: 50px;
   padding: 10px 28px 10px 29px;
@@ -928,14 +899,14 @@ address {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.subscribe-input:not(:placeholder-shown) {
+  color: #ffffff;
+}
+
 .footer-subscribe-form {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.subscribe-input:not(:placeholder-shown) {
-  color: #ffffff;
 }
 
 .right-part {

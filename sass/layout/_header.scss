@@ -13,6 +13,10 @@
   }
   .nav-list {
     display: flex;
+
+    & .link.current {
+      color: var(--accent-color);
+    }
   }
   .contact-list {
     display: flex;
@@ -36,26 +40,27 @@
     letter-spacing: 0.02em;
     align-items: center;
     padding-top: 32px;
-      padding-bottom: 32px;
+    padding-bottom: 32px;
     color: var(--primary-text-color);
     transition: color 250ms var(--time-distribution);
+
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
   }
   .current {
     position: relative;
-  }
-  .current::after {
-    position: absolute;
-    content: "";
-    bottom: -1px;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background-color: var(--accent-color);
-  }
-  
-  .nav-list-link:hover,
-  .nav-list-link:focus {
-    color: var(--accent-color);
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -1px;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: var(--accent-color);
+    }
   }
   
   .head-contact {
@@ -67,20 +72,23 @@
     letter-spacing: 0.02em;
     color: #757575;
     transition: color 250ms var(--time-distribution);
+
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
   }
   .contact-icon {
     margin-right: 10px;
     fill: currentColor;
     transition: fill 250ms var(--time-distribution);
+
+    .head-contact:hover &,
+    .head-contact:focus & {
+      fill: var(--accent-color);
+    } 
   }
-  .head-contact:hover,
-  .head-contact:focus {
-    color: var(--accent-color);
-  }
-  .head-contact:hover .contact-icon,
-  .head-contact:focus .contact-icon{
-    fill: var(--accent-color);
-  } 
+  
   .contact-list-item {
     display: flex;
     align-items: center;
@@ -88,6 +96,4 @@
   .section-team-list {
     color: var(--primary-section-color);
   }
-  .nav-list .link.current {
-    color: var(--accent-color);
-  }
+  

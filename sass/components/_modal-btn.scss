@@ -13,9 +13,11 @@
     color: var(--primary-section-color);
     background: var(--accent-color);
     transition: background-color 250ms var(--time-distribution), color 250ms var(--time-distribution);
+
+    &:hover,
+    &:focus {
+    background-color: var(--focus-color);
+    }
   }
   
-  .modal-btn:hover,
-  .modal-btn:focus {
-    background-color: var(--focus-color);
-  }
+  
