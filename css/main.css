@@ -25,7 +25,7 @@
   overflow: hidden;
 }
 
-.social-list-link, .text-content-icon, .client-list-item, .client-list-link, .subscribe-form-btn {
+.social-list__link, .text-content-icon, .client-list-item, .client-list-link, .subscribe-form-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,24 +116,24 @@ address {
   justify-content: space-between;
 }
 
-.social-list-link {
+.social-list__link {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   transition: background-color 250ms var(--time-distribution);
 }
 
-.social-list-link:hover, .social-list-link:focus {
+.social-list__link:hover, .social-list__link:focus {
   background-color: var(--accent-color);
 }
 
-.social-list-icon {
+.social-list__icon {
   fill: #AFB1B8;
   transition: fill 250ms var(--time-distribution);
 }
 
-.social-list-link:hover .social-list-icon,
-.social-list-link:focus .social-list-icon {
+.social-list__link:hover .social-list__icon,
+.social-list__link:focus .social-list__icon {
   fill: white;
 }
 
@@ -364,7 +364,7 @@ address {
   justify-content: space-between;
 }
 
-.page-navigation {
+.navigation {
   display: flex;
   align-items: center;
 }
@@ -381,19 +381,19 @@ address {
   display: flex;
 }
 
-.logo-header {
+.logo__header {
   color: var(--primary-text-color);
 }
 
-.nav-list-item:not(:last-child) {
+.nav-list__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.contact-list-item:not(:last-child) {
+.contact-list__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.nav-list-link {
+.nav-list__link {
   display: inline-flex;
   font-weight: 500;
   font-size: 14px;
@@ -406,7 +406,7 @@ address {
   transition: color 250ms var(--time-distribution);
 }
 
-.nav-list-link:hover, .nav-list-link:focus {
+.nav-list__link:hover, .nav-list__link:focus {
   color: var(--accent-color);
 }
 
@@ -424,7 +424,7 @@ address {
   background-color: var(--accent-color);
 }
 
-.head-contact {
+.header-contact {
   display: inline-flex;
   align-items: center;
   font-weight: 500;
@@ -435,22 +435,22 @@ address {
   transition: color 250ms var(--time-distribution);
 }
 
-.head-contact:hover, .head-contact:focus {
+.header-contact:hover, .header-contact:focus {
   color: var(--accent-color);
 }
 
-.contact-icon {
+.header-contact__icon {
   margin-right: 10px;
   fill: currentColor;
   transition: fill 250ms var(--time-distribution);
 }
 
-.head-contact:hover .contact-icon,
-.head-contact:focus .contact-icon {
+.header-contact:hover .header-contact__icon,
+.header-contact:focus .header-contact__icon {
   fill: var(--accent-color);
 }
 
-.contact-list-item {
+.contact-list__item {
   display: flex;
   align-items: center;
 }
@@ -506,13 +506,13 @@ address {
   padding-top: 47px;
 }
 
-.section-about-photo-list {
+.section-about__photo-list {
   flex-basis: calc(100% - 90px)/3;
   margin-left: 30px;
   margin-top: 30px;
 }
 
-.section-about-title {
+.section-about__title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -522,7 +522,7 @@ address {
   margin-bottom: 10px;
 }
 
-.section-about-main-title {
+.section-about__main-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -538,11 +538,11 @@ address {
   color: var(--secondary-text-color);
 }
 
-.section-about-photo-list {
+.section-about__photo-list {
   position: relative;
 }
 
-.section-about-overlay {
+.section-about__overlay {
   position: absolute;
   font-family: var(--primary-font-family);
   font-weight: 700;
@@ -581,7 +581,7 @@ address {
   background-color: var(--team-background-color);
 }
 
-.section-team-title {
+.section-team__title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -850,7 +850,7 @@ address {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.social-list-item:not(:last-child) {
+.social-list__item:not(:last-child) {
   margin-right: 10px;
 }
 

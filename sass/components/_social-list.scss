@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
   }
-  .social-list-link {
+  .social-list__link {
     @extend %align;
     width: 44px;
     height: 44px;
@@ -14,12 +14,12 @@
       background-color: var(--accent-color);
     }
   }  
-  .social-list-icon {
+  .social-list__icon {
     fill: #AFB1B8;
     transition: fill 250ms var(--time-distribution);
 
-    .social-list-link:hover &,
-    .social-list-link:focus & {
+    .social-list__link:hover &,
+    .social-list__link:focus & {
       fill: white;
    }
   }
